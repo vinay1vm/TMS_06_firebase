@@ -46,11 +46,11 @@ public class Signup extends AppCompatActivity {
 
                 }
                 else{
-                    databaseReference.child("users").child(phnos).child("full_name").setValue(names);
-                    databaseReference.child("users").child(phnos).child("email").setValue(emails);
-                    databaseReference.child("users").child(phnos).child("door_no").setValue(doornos);
-                    databaseReference.child("users").child(phnos).child("ph_no").setValue(phnos);
-                    databaseReference.child("users").child(phnos).child("password").setValue(Rpasswords);
+                    databaseReference.child("users").child(doornos).child("full_name").setValue(names);
+                    databaseReference.child("users").child(doornos).child("email").setValue(emails);
+                    databaseReference.child("users").child(doornos).child("door_no").setValue(doornos);
+                    databaseReference.child("users").child(doornos).child("ph_no").setValue(phnos);
+                    databaseReference.child("users").child(doornos).child("password").setValue(Rpasswords);
 
                     Toast.makeText(Signup.this, "Register Success", Toast.LENGTH_SHORT).show();
 
