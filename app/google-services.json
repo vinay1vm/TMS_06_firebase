@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "354715421783",
+    "firebase_url": "https://tms-06-default-rtdb.firebaseio.com",
     "project_id": "tms-06",
     "storage_bucket": "tms-06.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "354715421783-f2pf3p6rdbnlktsh1of3u2nnqo62954j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tms_06",
+            "certificate_hash": "f7616d0ecf92d9c4938141d45d6dfb2782dc938e"
+          }
+        },
         {
           "client_id": "354715421783-l2gkm6ivjsupmnq62qps7me5kvd6l89l.apps.googleusercontent.com",
           "client_type": 3
