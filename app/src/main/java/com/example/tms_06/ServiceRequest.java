@@ -1,10 +1,17 @@
 package com.example.tms_06;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class ServiceRequest extends AppCompatActivity {
 
@@ -22,9 +29,23 @@ public class ServiceRequest extends AppCompatActivity {
         s.setAdapter(adapter);
 
 
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE},
+                PackageManager.PERMISSION_GRANTED);
 
-        //String Spinval=s.getSelectedItem().toString();
 
+       // String Spinval=s.getSelectedItem().toString();
+        EditText desc=findViewById(R.id.editText);
+        TextView attachment=findViewById(R.id.attach);
+
+        attachment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
 
     }
 }

@@ -56,31 +56,34 @@ public class MainActivity extends AppCompatActivity {
 
                             if(snapshot.exists()){
 
-                                Query query = reference.orderByChild("password").equalTo(pass);
+                                 String dbpass = snapshot.child(usernames).child("password").getValue(String.class);
+                                 if(dbpass.equals(pass)){
 
-                                query.addListenerForSingleValueEvent((new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        if(snapshot.exists()){
 
-                                            startActivity(new Intent(MainActivity.this,Resident_home.class));
-                                            Toast.makeText(MainActivity.this, "ok", Toast.LENGTH_SHORT).show();
+                                     String name=snapshot.child(usernames).child("full_name").getValue(String.class);
 
-                                        }
-                                        else {
-                                            Toast.makeText(MainActivity.this, "wrong pass", Toast.LENGTH_SHORT).show();
-                                        }
 
-                                    }
 
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
 
-                                    }
-                                }));
+                                     Intent intent=new Intent(getApplicationContext(),Resident_home.class);
+                                     intent.putExtra("name",name);
+
+
+
+
+                                     startActivity(intent);
+                                     Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+
+                                 }
+                                 else {
+
+                                     Toast.makeText(MainActivity.this, "Wrong Passsword", Toast.LENGTH_SHORT).show();
+                                 }
 
                             }
-                            Toast.makeText(MainActivity.this, "No such user", Toast.LENGTH_SHORT).show();
+                            else {
+                                Toast.makeText(MainActivity.this, "No such user", Toast.LENGTH_SHORT).show();
+                            }
                         }
 
                         @Override

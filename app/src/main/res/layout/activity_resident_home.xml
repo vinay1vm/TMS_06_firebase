@@ -193,8 +193,22 @@
 
         android:textColor="@color/black"
         android:textSize="35dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-10dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="-4dp" />
+
+    <TextView
+        android:id="@+id/usrname"
+        android:layout_width="104dp"
+        android:layout_height="53dp"
+        android:text="helloo"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
