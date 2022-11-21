@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         EditText password=findViewById(R.id.pass);
         TextView reglink=findViewById(R.id.register);
         Button loginbt=findViewById(R.id.loginbtn);
-        // EditText Email=findViewById(R.id.regEmail);
+
 
 
         loginbt.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String usernames= usern.getText().toString();
                 String pass= password.getText().toString();
-                //String email= Email.getText().toString();
+
 
                 if(usernames.isEmpty() || pass.isEmpty()){
                     Toast.makeText(MainActivity.this, "fields cant be empty", Toast.LENGTH_SHORT).show();

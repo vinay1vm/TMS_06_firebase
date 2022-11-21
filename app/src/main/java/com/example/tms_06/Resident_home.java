@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Resident_home extends AppCompatActivity {
 
 
-    public TextView username=findViewById(R.id.usrname);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,8 @@ public class Resident_home extends AppCompatActivity {
 
 
 
+
+        TextView username=findViewById(R.id.usrname);
 
         Button sr=findViewById(R.id.srbtn);
 
@@ -45,14 +47,17 @@ public class Resident_home extends AppCompatActivity {
 
 
 
-
-
-
-
         sr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Resident_home.this,ServiceRequest.class));
+                Intent intent=new Intent(getApplicationContext(),ServiceRequest.class);
+                intent.putExtra("Rname",uname);
+                intent.putExtra("Remail",email);
+                intent.putExtra("Rdoorno",doorno);
+                intent.putExtra("Rphno",phno);
+
+
+                startActivity(intent);
             }
         });
 

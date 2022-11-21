@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,7 @@ public class ServiceRequest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_request);
+        getSupportActionBar().hide();
 
 
         String[] arraySpinner = new String[] {" ", "Plumber", "Laundry", "Electrican"};
@@ -49,6 +51,22 @@ public class ServiceRequest extends AppCompatActivity {
         EditText desc=findViewById(R.id.editText);
         TextView attachment=findViewById(R.id.attach);
         Button submit=findViewById(R.id.SrSubmit);
+
+
+
+        TextView test2=findViewById(R.id.textView7);
+        TextView test3=findViewById(R.id.textView8);
+
+
+
+        Intent intent=getIntent();
+        String name=intent.getStringExtra("Rname");
+        String email=intent.getStringExtra("Remail");
+        String doorno=intent.getStringExtra("Rdoorno");
+        String phno=intent.getStringExtra("Rphno");
+
+        test2.setText(name);
+        test3.setText(doorno);
 
 
 
