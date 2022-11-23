@@ -1,26 +1,48 @@
 package com.example.tms_06;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 public class ServiceRequest extends AppCompatActivity {
 
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://tms-06-default-rtdb.firebaseio.com/");
+    StorageReference storageReference= FirebaseStorage.getInstance().getReference();
 
+    private static final int Launch_code = 2;
+    Uri uri;
+
+
+    int id=0;
+    TextView done=findViewById(R.id.ok);
+    ImageView image=findViewById(R.id.image);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +51,7 @@ public class ServiceRequest extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-        //spinner decleration
+//spinner decleration
         String[] arraySpinner = new String[] {" ", "Plumber", "Laundry", "Electrican"};
         Spinner s = (Spinner) findViewById(R.id.serviceList);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -44,30 +66,29 @@ public class ServiceRequest extends AppCompatActivity {
                 PackageManager.PERMISSION_GRANTED);
 
 
-
-
-
-
         EditText desc=findViewById(R.id.editText);
-       // TextView attachment=findViewById(R.id.attach);
+        TextView attachment=findViewById(R.id.attach);
         Button submit=findViewById(R.id.SrSubmit);
 
 
+//ImagePicker
+//        attachment.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//               // int Launch_code=2;
+//                Intent galleryintent = new Intent();
+//                galleryintent.setAction(Intent.ACTION_GET_CONTENT);
+//                galleryintent.setType("image/*");
+//                startActivityForResult(galleryintent,Launch_code);
+//            }
+//        });
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+//TODatabase
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,19 +101,21 @@ public class ServiceRequest extends AppCompatActivity {
 
 
             Intent intent=getIntent();
-            String name=intent.getStringExtra("Rname");
-            String email=intent.getStringExtra("Remail");
-            String doorno=intent.getStringExtra("Rdoorno");
-            String phno=intent.getStringExtra("Rphno");
+            final String name=intent.getStringExtra("Rname");
+            final String email=intent.getStringExtra("Remail");
+            final String doorno=intent.getStringExtra("Rdoorno");
+            final String phno=intent.getStringExtra("Rphno");
 
 
 
-            int id=0;
+
             id++;
             String ID = Integer.toString(id);
 
+               // DatabaseReference reference=FirebaseDatabase.getInstance().getReference().child(Spinval);
 
-                if(Spinval.matches(" ") || descc.matches(""))  {
+                if (!Spinval.matches(" ") || !descc.matches("" ) ) {
+
                     Toast.makeText(ServiceRequest.this, "Fields cant be empty", Toast.LENGTH_SHORT).show();
 
                 }
@@ -104,6 +127,8 @@ public class ServiceRequest extends AppCompatActivity {
                         databaseReference.child("Requests").child(Spinval).child(ID).child("email").setValue(email);
                         databaseReference.child("Requests").child(Spinval).child(ID).child("ph_no").setValue(phno);
                         databaseReference.child("Requests").child(Spinval).child(ID).child("description").setValue(descc);
+
+                        //UploadImage(uri);
 
                         Toast.makeText(ServiceRequest.this, "Request Raised", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(ServiceRequest.this,Resident_home.class));
@@ -119,6 +144,7 @@ public class ServiceRequest extends AppCompatActivity {
                         databaseReference.child("Requests").child(Spinval).child(ID).child("ph_no").setValue(phno);
                         databaseReference.child("Requests").child(Spinval).child(ID).child("description").setValue(descc);
 
+                       // UploadImage(uri);
                         Toast.makeText(ServiceRequest.this, "Request Raised", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(ServiceRequest.this,Resident_home.class));
                     }
@@ -131,9 +157,12 @@ public class ServiceRequest extends AppCompatActivity {
                         databaseReference.child("Requests").child(Spinval).child(ID).child("ph_no").setValue(phno);
                         databaseReference.child("Requests").child(Spinval).child(ID).child("description").setValue(descc);
 
+                       // UploadImage(uri);
                         Toast.makeText(ServiceRequest.this, "Request Raised", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(ServiceRequest.this,Resident_home.class));
                     }
+
+
                 }
 
 
