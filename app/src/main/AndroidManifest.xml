@@ -4,8 +4,8 @@
     package="com.example.tms_06">
 
     <uses-permission android:name="android.permissions.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TMS_06"
         tools:targetApi="31">
+        <activity
+            android:name=".AddVisitor"
+            android:exported="false" />
+        <activity
+            android:name=".Visitor"
+            android:exported="false" />
         <activity
             android:name=".ServiceRequest"
             android:exported="false" />

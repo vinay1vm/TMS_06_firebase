@@ -61,15 +61,17 @@ public class MainActivity extends AppCompatActivity {
 
 
                                      String name=snapshot.child(usernames).child("full_name").getValue(String.class);
-
-
+                                     String email=snapshot.child(usernames).child("email").getValue(String.class);
+                                     String doorno=snapshot.child(usernames).child("door_no").getValue(String.class);
+                                     String phno=snapshot.child(usernames).child("ph_no").getValue(String.class);
 
 
                                      Intent intent=new Intent(getApplicationContext(),Resident_home.class);
-                                     intent.putExtra("name",name);
 
-
-
+                                     GlobalVar.door_no = doorno;
+                                     GlobalVar.name = name;
+                                     GlobalVar.email = email;
+                                     GlobalVar.phno = phno;
 
                                      startActivity(intent);
                                      Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();

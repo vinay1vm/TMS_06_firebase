@@ -22,28 +22,41 @@ public class Resident_home extends AppCompatActivity {
 
 
 
-        Button sr=findViewById(R.id.srbtn);
 
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+
+        //DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
 
 
 
         TextView username=findViewById(R.id.usrname);
-        Intent intent=getIntent();
-        String uname=intent.getStringExtra("name");
+        Button sr=findViewById(R.id.srbtn);
+        Button visitor=findViewById(R.id.visitorbtn);
 
-        username.setText(uname);
+
+
+
+        username.setText(GlobalVar.name);
 
 
 
         sr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Resident_home.this,ServiceRequest.class));
+
+                Intent intent=new Intent(getApplicationContext(),ServiceRequest.class);
+                startActivity(intent);
             }
         });
 
+
+        visitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),Visitor.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
