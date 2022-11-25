@@ -44,7 +44,7 @@ public class Resident_home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(getApplicationContext(),ServiceRequest.class);
+                Intent intent=new Intent(getApplicationContext(),AddServiceRequest.class);
                 startActivity(intent);
             }
         });

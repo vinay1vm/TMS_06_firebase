@@ -77,7 +77,7 @@ public class ServiceRequest extends AppCompatActivity {
                         databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("description").setValue(descc);
 
                         Toast.makeText(ServiceRequest.this, "Request Raised", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ServiceRequest.this, Resident_home.class));
+                        startActivity(new Intent(ServiceRequest.this, AddServiceRequest.class));
 
 
                     }
@@ -90,7 +90,7 @@ public class ServiceRequest extends AppCompatActivity {
                         databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("description").setValue(descc);
 
                         Toast.makeText(ServiceRequest.this, "Request Raised", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ServiceRequest.this, Resident_home.class));
+                        startActivity(new Intent(ServiceRequest.this, AddServiceRequest.class));
 
 
                     }
@@ -103,7 +103,7 @@ public class ServiceRequest extends AppCompatActivity {
                         databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("description").setValue(descc);
 
                         Toast.makeText(ServiceRequest.this, "Request Raised", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ServiceRequest.this, Resident_home.class));
+                        startActivity(new Intent(ServiceRequest.this, AddServiceRequest.class));
 
 
                     }

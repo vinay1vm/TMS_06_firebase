@@ -7,11 +7,25 @@
     tools:context=".Visitor">
 
 
+    <LinearLayout
+        android:layout_width="402dp"
+        android:layout_height="567dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="100dp"
+        >
+
+
+
+
+
+    </LinearLayout>
+
     <Button
-        android:id="@+id/addvisitor"
+        android:id="@+id/addSR"
         android:layout_width="432dp"
         android:layout_height="64dp"
-        android:text="+Add Visitors"
+        android:text="+Raise New Request"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,9 +34,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recview"
-        android:layout_width="406dp"
-        android:layout_height="662dp"
+ <!--   <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="226dp"
+        android:layout_height="232dp"
         tools:ignore="MissingConstraints" />
+  -->
 </androidx.constraintlayout.widget.ConstraintLayout>
