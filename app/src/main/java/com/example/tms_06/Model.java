@@ -1,47 +1,40 @@
 package com.example.tms_06;
 
+import static com.example.tms_06.GlobalVar.name;
+
 public class Model {
-    String id,name,dat,tim;
+    String Guest_full_name,Guest_Date,Guest_Time;
 
-    public Model() {
+
+    public Model() {}
+
+    public Model(String guest_full_name, String guest_Date, String guest_Time) {
+        Guest_full_name = guest_full_name;
+        Guest_Date = guest_Date;
+        Guest_Time = guest_Time;
     }
 
-    public Model(String id, String name, String dat, String tim) {
-        this.id = id;
-        this.name = name;
-        this.dat = dat;
-        this.tim = tim;
+    public String getGuest_full_name() {
+        return Guest_full_name;
     }
 
-    public String getId() {
-        return id;
+    public void setGuest_full_name(String guest_full_name) {
+        Guest_full_name = guest_full_name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getGuest_Date() {
+        return Guest_Date;
     }
 
-    public String getName() {
-        return name;
+    public void setGuest_Date(String guest_Date) {
+        Guest_Date = guest_Date;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getGuest_Time() {
+        return Guest_Time;
     }
 
-    public String getDat() {
-        return dat;
-    }
-
-    public void setDat(String dat) {
-        this.dat = dat;
-    }
-
-    public String getTim() {
-        return tim;
-    }
-
-    public void setTim(String tim) {
-        this.tim = tim;
+    public void setGuest_Time(String guest_Time) {
+        Guest_Time = guest_Time;
     }
 }

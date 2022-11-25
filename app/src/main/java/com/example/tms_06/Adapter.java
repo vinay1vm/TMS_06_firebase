@@ -33,10 +33,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         Model model=arrayList.get(position);
 
-        holder.id.setText(model.getId());
-        holder.name.setText(model.getName());
-        holder.time.setText(model.getTim());
-        holder.date.setText(model.getDat());
+        //holder.id.setText(model.getId());
+        holder.name.setText(model.getGuest_full_name());
+        holder.time.setText(model.getGuest_Time());
+        holder.date.setText(model.getGuest_Date());
 
     }
 
@@ -52,7 +52,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            id=itemView.findViewById(R.id.txtid);
+           // id=itemView.findViewById(R.id.txtid);
             name=itemView.findViewById(R.id.txtname);
             date=itemView.findViewById(R.id.txtdate);
             time=itemView.findViewById(R.id.txttime);
