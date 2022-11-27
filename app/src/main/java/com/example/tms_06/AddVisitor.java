@@ -35,13 +35,13 @@ public class AddVisitor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String vName=name.getText().toString();
-                String vAdd=add.getText().toString();
-                String vCon=con.getText().toString();
-                String vDate=date.getText().toString();
-                String vTime=time.getText().toString();
+                String Name=name.getText().toString();
+                String Add=add.getText().toString();
+                String Con=con.getText().toString();
+                String Date=date.getText().toString();
+                String Time=time.getText().toString();
 
-                if(vName.isEmpty() || vAdd.isEmpty() || vCon.isEmpty() || vDate.isEmpty() || vTime.isEmpty()){
+                if(Name.isEmpty() || Add.isEmpty() || Con.isEmpty() || Date.isEmpty() || Time.isEmpty()){
                     Toast.makeText(AddVisitor.this, "Fields cant be empty", Toast.LENGTH_SHORT).show();
 
                 }
@@ -51,11 +51,11 @@ public class AddVisitor extends AppCompatActivity {
 
                     databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Resident_full_name").setValue(GlobalVar.name);
                     databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Resident_ph_no").setValue(GlobalVar.phno);
-                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_full_name").setValue(vName);
-                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Address").setValue(vAdd);
-                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Contact").setValue(vCon);
-                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Date").setValue(vDate);
-                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Time").setValue(vTime);
+                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_full_name").setValue(Name);
+                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Address").setValue(Add);
+                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Contact").setValue(Con);
+                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Date").setValue(Date);
+                    databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Time").setValue(Time);
 
                     Toast.makeText(AddVisitor.this, "Visitor Added!", Toast.LENGTH_SHORT).show();
 
