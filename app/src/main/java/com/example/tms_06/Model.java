@@ -1,47 +1,64 @@
 package com.example.tms_06;
 
 public class Model {
-    String id,name,dat,tim;
+    String cc, Resident_full_name,Guest_Date, Guest_Time,Guest_full_name;
 
     public Model() {
     }
 
-    public Model(String id, String name, String dat, String tim) {
-        this.id = id;
-        this.name = name;
-        this.dat = dat;
-        this.tim = tim;
+    public Model(String cc, String resident_full_name, String guest_Date, String guest_Time,String guest_full_name) {
+        this.cc = cc;
+        Resident_full_name = resident_full_name;
+        Guest_Date = guest_Date;
+        Guest_Time = guest_Time;
+        Guest_full_name= guest_full_name;
+
     }
 
-    public String getId() {
-        return id;
+
+
+
+
+    public String getCc() {
+        return cc;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCc(String cc) {
+        this.cc = cc;
     }
 
-    public String getName() {
-        return name;
+    public String getResident_full_name() {
+        return Resident_full_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setResident_full_name(String resident_full_name) {
+        Resident_full_name = resident_full_name;
     }
 
-    public String getDat() {
-        return dat;
+    public String getGuest_Date() {
+        return Guest_Date;
     }
 
-    public void setDat(String dat) {
-        this.dat = dat;
+    public void setGuest_Date(String guest_Date) {
+        Guest_Date = guest_Date;
     }
 
-    public String getTim() {
-        return tim;
+    public String getGuest_Time() {
+        return Guest_Time;
     }
 
-    public void setTim(String tim) {
-        this.tim = tim;
+    public void setGuest_Time(String guest_Time) {
+        Guest_Time = guest_Time;
+    }
+
+
+
+
+    public String getGuest_full_name() {
+        return Guest_full_name;
+    }
+
+    public void setGuest_full_name(String guest_full_name) {
+        Guest_full_name = guest_full_name;
     }
 }

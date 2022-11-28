@@ -70,11 +70,8 @@ public class ServiceRequest extends AppCompatActivity {
 
                     if (Spinval.equals("Plumber")) {
 
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("full_name").setValue(GlobalVar.name);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("door_no").setValue(GlobalVar.door_no);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("email").setValue(GlobalVar.email);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("ph_no").setValue(GlobalVar.phno);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("description").setValue(descc);
+                        uploadvend(Spinval,descc);
+                        upload(Spinval,descc);
 
                         Toast.makeText(ServiceRequest.this, "Request Raised", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(ServiceRequest.this, AddServiceRequest.class));
@@ -83,11 +80,8 @@ public class ServiceRequest extends AppCompatActivity {
                     }
                     if (Spinval.equals("Laundry")) {
 
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("full_name").setValue(GlobalVar.name);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("door_no").setValue(GlobalVar.door_no);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("email").setValue(GlobalVar.email);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("ph_no").setValue(GlobalVar.phno);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("description").setValue(descc);
+                        uploadvend(Spinval,descc);
+                        upload(Spinval,descc);
 
                         Toast.makeText(ServiceRequest.this, "Request Raised", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(ServiceRequest.this, AddServiceRequest.class));
@@ -96,11 +90,8 @@ public class ServiceRequest extends AppCompatActivity {
                     }
                     if (Spinval.equals("Electrican")) {
 
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("full_name").setValue(GlobalVar.name);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("door_no").setValue(GlobalVar.door_no);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("email").setValue(GlobalVar.email);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("ph_no").setValue(GlobalVar.phno);
-                        databaseReference.child("Requests").child(Spinval).child(String.valueOf(Counter.id)).child("description").setValue(descc);
+                        uploadvend(Spinval,descc);
+                        upload(Spinval,descc);
 
                         Toast.makeText(ServiceRequest.this, "Request Raised", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(ServiceRequest.this, AddServiceRequest.class));
@@ -108,12 +99,34 @@ public class ServiceRequest extends AppCompatActivity {
 
                     }
 
-
-
                 }
 
             }
+
+            private void uploadvend(String spinval , String descc) {
+                databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("full_name").setValue(GlobalVar.name);
+                databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("door_no").setValue(GlobalVar.door_no);
+                databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("email").setValue(GlobalVar.email);
+                databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("ph_no").setValue(GlobalVar.phno);
+                databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("description").setValue(descc);
+
+            }
+
+            private void upload(String spinval, String descc) {
+                databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("type").setValue(spinval);
+                databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("full_name").setValue(GlobalVar.name);
+                databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("door_no").setValue(GlobalVar.door_no);
+                databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("email").setValue(GlobalVar.email);
+                databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("ph_no").setValue(GlobalVar.phno);
+                databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("description").setValue(descc);
+
+
+
+            }
         });
+
+
+
 
 
 

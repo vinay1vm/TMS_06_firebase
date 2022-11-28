@@ -57,6 +57,8 @@ public class AddVisitor extends AppCompatActivity {
                     databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Date").setValue(Date);
                     databaseReference.child("Visitors").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Guest_Time").setValue(Time);
 
+                    int cc=Counter.id;
+
                     Toast.makeText(AddVisitor.this, "Visitor Added!", Toast.LENGTH_SHORT).show();
 
                     startActivity(new Intent(AddVisitor.this,Visitor.class));

@@ -5,18 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class srAdapter extends RecyclerView.Adapter<srAdapter.ViewHolder>  {
 
-    ArrayList<Model> arrayList;
+    ArrayList<SrModel> arrayList;
     Context context;
 
-    public Adapter(ArrayList<Model> arrayList, Context context) {
+    public srAdapter(ArrayList<SrModel> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -24,19 +25,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.visitorlist,parent,false);
+        View view=LayoutInflater.from(context).inflate(R.layout.srlist,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-        Model model=arrayList.get(position);
-
-       // holder.id.setText(model.getCc());
-        holder.name.setText(model.getGuest_full_name());
-        holder.time.setText(model.getGuest_Time());
-        holder.date.setText(model.getGuest_Date());
+        SrModel srModel=arrayList.get(position);
+        holder.type.setText(srModel.getType());
+        holder.desc.setText(srModel.getDescription());
 
     }
 
@@ -45,18 +42,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return arrayList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView id,name,date,time;
-
+        TextView type,desc;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-           // id=itemView.findViewById(R.id.txtid);
-            name=itemView.findViewById(R.id.txtname);
-            date=itemView.findViewById(R.id.txtdate);
-            time=itemView.findViewById(R.id.txttime);
-
+            type=itemView.findViewById(R.id.txtType);
+            desc=itemView.findViewById(R.id.txtDesc);
         }
     }
+
 }
