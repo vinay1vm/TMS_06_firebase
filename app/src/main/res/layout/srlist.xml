@@ -22,29 +22,29 @@
             android:layout_margin="0dp"
             android:orientation="vertical">
 
-            <!--            <LinearLayout-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_gravity="center_vertical"-->
-            <!--                android:orientation="horizontal">-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal">
 
-            <!--                <TextView-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:text="Visitor Id: "-->
-            <!--                    android:textStyle="bold"-->
-            <!--                    android:textColor="@color/black"-->
-            <!--                    android:textSize="24dp" />-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Request Id:       "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="24dp" />
 
-            <!--                <TextView-->
-            <!--                    android:id="@+id/txtid"-->
-            <!--                    android:layout_width="185dp"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:textColor="@color/black"-->
+                            <TextView
+                                android:id="@+id/txtrid"
+                                android:layout_width="185dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
 
-            <!--                    android:textSize="24dp"-->
-            <!--                    tools:ignore="DuplicateIds" />-->
-            <!--            </LinearLayout>-->
+                                android:textSize="24dp"
+                                tools:ignore="DuplicateIds" />
+                        </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -62,7 +62,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Request Type: "
+                    android:text="Request Type:  "
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="24dp" />
@@ -93,7 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Description:   "
+                    android:text="Description:      "
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="24dp" />
@@ -109,36 +109,36 @@
             </LinearLayout>
         </LinearLayout>
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="348dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="0dp"-->
-<!--            android:orientation="vertical">-->
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="348dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_margin="0dp"-->
+        <!--            android:orientation="vertical">-->
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center_vertical"-->
-<!--                android:orientation="horizontal">-->
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center_vertical"-->
+        <!--                android:orientation="horizontal">-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Time:  "-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="24dp" />-->
+        <!--                <TextView-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="Time:  "-->
+        <!--                    android:textStyle="bold"-->
+        <!--                    android:textColor="@color/black"-->
+        <!--                    android:textSize="24dp" />-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/txttime"-->
-<!--                    android:layout_width="228dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textColor="@color/black"-->
+        <!--                <TextView-->
+        <!--                    android:id="@+id/txttime"-->
+        <!--                    android:layout_width="228dp"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:textColor="@color/black"-->
 
-<!--                    android:textSize="24dp"-->
-<!--                    tools:ignore="DuplicateIds" />-->
-<!--            </LinearLayout>-->
-<!--        </LinearLayout>-->
+        <!--                    android:textSize="24dp"-->
+        <!--                    tools:ignore="DuplicateIds" />-->
+        <!--            </LinearLayout>-->
+        <!--        </LinearLayout>-->
 
 
     </LinearLayout>

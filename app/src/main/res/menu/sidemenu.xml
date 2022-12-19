@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+
+    <item android:id="@+id/HomeMenu"
+        android:title="Home"/>
+
+    <item android:id="@+id/HomeSR"
+        android:title="Raise Request"/>
+
+    <item android:id="@+id/HomeVisitor"
+        android:title="Add Visitor"/>
+
+    <item android:id="@+id/HomeSetting"
+        android:title="Settings"/>
+
+    <item android:id="@+id/HomeLogout"
+        android:title="Logout"/>
+
+</group>
+</menu>

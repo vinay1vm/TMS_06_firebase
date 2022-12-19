@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Signup extends AppCompatActivity {
 
-    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://tms-06-default-rtdb.firebaseio.com/");
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://tms006-7c621-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

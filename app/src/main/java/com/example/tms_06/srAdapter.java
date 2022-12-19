@@ -34,6 +34,7 @@ public class srAdapter extends RecyclerView.Adapter<srAdapter.ViewHolder>  {
         SrModel srModel=arrayList.get(position);
         holder.type.setText(srModel.getType());
         holder.desc.setText(srModel.getDescription());
+        holder.idnum.setText(srModel.getRequest_Id());
 
     }
 
@@ -44,12 +45,13 @@ public class srAdapter extends RecyclerView.Adapter<srAdapter.ViewHolder>  {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView type,desc;
+        TextView type,desc,idnum;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             type=itemView.findViewById(R.id.txtType);
             desc=itemView.findViewById(R.id.txtDesc);
+            idnum=itemView.findViewById(R.id.txtrid);
         }
     }
 

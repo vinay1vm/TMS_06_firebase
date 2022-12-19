@@ -13,6 +13,17 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Resident_home extends AppCompatActivity {
 
+
+
+
+    public void onBackPressed() {
+        //  super.onBackPressed();
+        moveTaskToBack(true);
+    }
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

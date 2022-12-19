@@ -1,30 +1,27 @@
 package com.example.tms_06;
 
+
 public class Model {
-    String cc, Resident_full_name,Guest_Date, Guest_Time,Guest_full_name;
+
+    String Visitor_Id, Resident_full_name,Guest_Date, Guest_Time,Guest_full_name;
 
     public Model() {
     }
 
-    public Model(String cc, String resident_full_name, String guest_Date, String guest_Time,String guest_full_name) {
-        this.cc = cc;
+    public Model(String visitor_Id, String resident_full_name, String guest_Date, String guest_Time, String guest_full_name) {
+        Visitor_Id = visitor_Id;
         Resident_full_name = resident_full_name;
         Guest_Date = guest_Date;
         Guest_Time = guest_Time;
-        Guest_full_name= guest_full_name;
-
+        Guest_full_name = guest_full_name;
     }
 
-
-
-
-
-    public String getCc() {
-        return cc;
+    public String getVisitor_Id() {
+        return Visitor_Id;
     }
 
-    public void setCc(String cc) {
-        this.cc = cc;
+    public void setVisitor_Id(String visitor_Id) {
+        Visitor_Id = visitor_Id;
     }
 
     public String getResident_full_name() {
@@ -51,9 +48,6 @@ public class Model {
         Guest_Time = guest_Time;
     }
 
-
-
-
     public String getGuest_full_name() {
         return Guest_full_name;
     }
@@ -62,3 +56,18 @@ public class Model {
         Guest_full_name = guest_full_name;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

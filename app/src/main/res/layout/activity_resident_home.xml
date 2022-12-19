@@ -57,6 +57,7 @@
         android:layout_marginStart="13dp"
         android:layout_marginEnd="72dp"
         android:background="@drawable/button1"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/billsbtn"
@@ -189,7 +190,7 @@
         android:layout_height="65dp"
         android:background="#6C00F8"
         android:padding="5dp"
-        android:text="  Welcome"
+        android:text=" Welcome"
 
         android:textColor="@color/black"
         android:textSize="35dp"
@@ -199,16 +200,16 @@
 
     <TextView
         android:id="@+id/usrname"
-        android:layout_width="104dp"
-        android:layout_height="53dp"
+        android:layout_width="109dp"
+        android:layout_height="60dp"
         android:text="helloo"
         android:textColor="@color/black"
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ServiceRequest extends AppCompatActivity {
 
-    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://tms-06-default-rtdb.firebaseio.com/");
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://tms006-7c621-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class ServiceRequest extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.READ_EXTERNAL_STORAGE},
+                        Manifest.permission.READ_EXTERNAL_STORAGE},
                 PackageManager.PERMISSION_GRANTED);
 
 
@@ -67,6 +67,7 @@ public class ServiceRequest extends AppCompatActivity {
                 }else {
 
                     Counter.Count();
+                    databaseReference.child("Counter").child("id").setValue(Counter.id);
 
                     if (Spinval.equals("Plumber")) {
 
@@ -104,21 +105,25 @@ public class ServiceRequest extends AppCompatActivity {
             }
 
             private void uploadvend(String spinval , String descc) {
+
                 databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("full_name").setValue(GlobalVar.name);
                 databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("door_no").setValue(GlobalVar.door_no);
                 databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("email").setValue(GlobalVar.email);
                 databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("ph_no").setValue(GlobalVar.phno);
                 databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("description").setValue(descc);
+                databaseReference.child("VendorRequests").child(spinval).child(String.valueOf(Counter.id)).child("Request_Id").setValue(String.valueOf(Counter.id));
 
             }
 
             private void upload(String spinval, String descc) {
+
                 databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("type").setValue(spinval);
                 databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("full_name").setValue(GlobalVar.name);
                 databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("door_no").setValue(GlobalVar.door_no);
                 databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("email").setValue(GlobalVar.email);
                 databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("ph_no").setValue(GlobalVar.phno);
                 databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("description").setValue(descc);
+                databaseReference.child("Requests").child(GlobalVar.door_no).child(String.valueOf(Counter.id)).child("Request_Id").setValue(String.valueOf(Counter.id));
 
 
 
