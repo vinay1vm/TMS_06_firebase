@@ -5,15 +5,20 @@
       <map>
         <entry key="app/src/main/res/drawable/border.xml" value="0.2495" />
         <entry key="app/src/main/res/drawable/button1.xml" value="0.2495" />
+        <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1935" />
+        <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1935" />
         <entry key="app/src/main/res/layout/activity_add_service_request.xml" value="0.32653985507246375" />
         <entry key="app/src/main/res/layout/activity_add_visitor.xml" value="0.32395833333333335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2776268115942029" />
-        <entry key="app/src/main/res/layout/activity_resident_home.xml" value="0.30644758663158167" />
+        <entry key="app/src/main/res/layout/activity_resident_home.xml" value="0.3317866460858613" />
         <entry key="app/src/main/res/layout/activity_service_request.xml" value="0.32653985507246375" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_visitor.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/homeheader.xml" value="0.34646739130434784" />
         <entry key="app/src/main/res/layout/srlist.xml" value="0.32653985507246375" />
+        <entry key="app/src/main/res/layout/styles.xml" value="0.20677083333333332" />
         <entry key="app/src/main/res/layout/visitorlist.xml" value="0.3229166666666667" />
+        <entry key="app/src/main/res/menu/sidemenu.xml" value="0.3880208333333333" />
       </map>
     </option>
   </component>

@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ServiceRequest extends AppCompatActivity {
 
-    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://tms-06-default-rtdb.firebaseio.com/");
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://tms006-7c621-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class ServiceRequest extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.READ_EXTERNAL_STORAGE},
+                        Manifest.permission.READ_EXTERNAL_STORAGE},
                 PackageManager.PERMISSION_GRANTED);
 
 
@@ -67,6 +67,7 @@ public class ServiceRequest extends AppCompatActivity {
                 }else {
 
                     Counter.Count();
+                    databaseReference.child("Counter").child("id").setValue(Counter.id);
 
                     if (Spinval.equals("Plumber")) {
 

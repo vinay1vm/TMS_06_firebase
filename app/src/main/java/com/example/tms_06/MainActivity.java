@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://tms-06-default-rtdb.firebaseio.com/");
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://tms006-7c621-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,31 +56,31 @@ public class MainActivity extends AppCompatActivity {
 
                             if(snapshot.exists()){
 
-                                 String dbpass = snapshot.child(usernames).child("password").getValue(String.class);
-                                 if(dbpass.equals(pass)){
+                                String dbpass = snapshot.child(usernames).child("password").getValue(String.class);
+                                if(dbpass.equals(pass)){
 
 
-                                     String name=snapshot.child(usernames).child("full_name").getValue(String.class);
-                                     String email=snapshot.child(usernames).child("email").getValue(String.class);
-                                     String doorno=snapshot.child(usernames).child("door_no").getValue(String.class);
-                                     String phno=snapshot.child(usernames).child("ph_no").getValue(String.class);
+                                    String name=snapshot.child(usernames).child("full_name").getValue(String.class);
+                                    String email=snapshot.child(usernames).child("email").getValue(String.class);
+                                    String doorno=snapshot.child(usernames).child("door_no").getValue(String.class);
+                                    String phno=snapshot.child(usernames).child("ph_no").getValue(String.class);
 
 
-                                     Intent intent=new Intent(getApplicationContext(),Resident_home.class);
+                                    Intent intent=new Intent(getApplicationContext(),Resident_home.class);
 
-                                     GlobalVar.door_no = doorno;
-                                     GlobalVar.name = name;
-                                     GlobalVar.email = email;
-                                     GlobalVar.phno = phno;
+                                    GlobalVar.door_no = doorno;
+                                    GlobalVar.name = name;
+                                    GlobalVar.email = email;
+                                    GlobalVar.phno = phno;
 
-                                     startActivity(intent);
-                                     Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                                    startActivity(intent);
+                                    Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
 
-                                 }
-                                 else {
+                                }
+                                else {
 
-                                     Toast.makeText(MainActivity.this, "Wrong Passsword", Toast.LENGTH_SHORT).show();
-                                 }
+                                    Toast.makeText(MainActivity.this, "Wrong Passsword", Toast.LENGTH_SHORT).show();
+                                }
 
                             }
                             else {

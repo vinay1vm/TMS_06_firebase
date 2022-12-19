@@ -30,6 +30,7 @@ public class Visitor extends AppCompatActivity {
         finish();
 
     }
+
     RecyclerView recyclerView;
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference reference=db.getReference().child("Visitors").child(GlobalVar.door_no);
